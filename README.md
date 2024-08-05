@@ -9,7 +9,7 @@ Bu solution, kullanıcıların web arayüzü üzerinden RabbitMQ kullanarak Exce
   
   ![image](https://github.com/user-attachments/assets/f5870768-e1e6-4849-9bd7-ae4ccfb3b03c)
 
-- ProductController bir mesajı RabbitMQ'ya gönderir.
+- CreateExcel Action bir mesajı RabbitMQ'ya gönderir.
 
 UserFile entity'si oluşturulur ve RabbitMQClient bu mesajı publish eder. UserFile Entity oluşturma amacı Excel oluşturma akışını kayıt altına almaktır.
 
