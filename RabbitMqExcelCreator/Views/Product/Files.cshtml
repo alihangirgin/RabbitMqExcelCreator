@@ -1,0 +1,37 @@
+﻿@model IEnumerable<UserFile>
+
+@{
+    ViewData["Title"] = "Files";
+}
+
+<h1>Files</h1>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>User ID</th>
+        <th>File Name</th>
+        <th>File Path</th>
+        <th>Created At</th>
+        <th>File Status</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var file in Model)
+    {
+        <tr>
+            <td>@file.UserId</td>
+            <td>@file.FileName</td>
+            <td>@file.FilePath</td>
+            <td>@file.CreatedAt</td>
+            <td>@file.FileStatus</td>
+            <td>
+                <a href="@Url.Content($"~/files/{file.FilePath}")" class="btn btn-primary @(file.FileStatus == FileStatus.InProgress ? "disabled" : "")">
+                    Download
+                </a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
